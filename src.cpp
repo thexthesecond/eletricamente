@@ -1,3 +1,5 @@
+// C++ code
+//
 #include <Servo.h>
 
 #define GasPin A0
@@ -42,11 +44,18 @@ void loop()
   
   if (AlarmOn) {
   	digitalWrite(LedPin, HIGH);
-    digitalWrite(BuzzerPin, HIGH);
+    Blink();
     myservo.write(180);
   } else {
   	digitalWrite(LedPin, LOW);
     digitalWrite(BuzzerPin, LOW);
     myservo.write(0);
   }
+}
+
+void Blink() {
+ 	digitalWrite(BuzzerPin, HIGH);
+  	delay(500);
+	digitalWrite(BuzzerPin, LOW);
+ 	delay(500);
 }
